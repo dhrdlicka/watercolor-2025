@@ -1,0 +1,88 @@
+{{{html-headelement}}}
+<div class="bw-window">
+
+  <header class="bw-caption"><a href="{{link-mainpage}}">{{msg-sitetitle}}</a></header>
+
+  <main class="bw-content">
+
+    <aside class="bw-sidebar" role="navigation" aria-label="Sidebar">
+      {{! User tile }}
+      <section class="bw-user-tile">
+
+      </section>
+
+      {{#data-portlets}}
+        {{#data-languages}}
+          {{>Portlet}}
+        {{/data-languages}}
+        {{#data-user-interface-preferences}}
+          {{>Portlet}}
+        {{/data-user-interface-preferences}}
+        {{#data-user-page}}
+          {{>Portlet}}
+        {{/data-user-page}}
+        {{#data-user-menu}}
+          {{>Portlet}}
+        {{/data-user-menu}}
+        {{#data-notifications}}
+          {{>Portlet}}
+        {{/data-notifications}}
+        {{#data-actions}}
+          {{>Portlet}}
+        {{/data-actions}}
+        {{#data-variants}}
+          {{>Portlet}}
+        {{/data-variants}}
+      {{/data-portlets}}
+      {{#data-portlets-sidebar}}
+        {{#data-portlets-first}}
+          {{>Portlet}}
+        {{/data-portlets-first}}
+        {{#array-portlets-rest}}
+          {{>Portlet}}
+        {{/array-portlets-rest}}
+      {{/data-portlets-sidebar}}
+    </aside>
+
+    <section class="bw-main" role="main">
+      <nav class="bw-actions">
+        <ul class="bw-namespaces">
+           {{{data-portlets.data-namespaces.html-items}}}
+        </ul>
+        <ul class="bw-views">
+            {{{data-portlets.data-views.html-items}}}
+        </ul>
+      </nav>
+      <div id="content" class="mw-body">
+        {{{html-indicators}}}
+        <h1 id="firstHeading" class="firstHeading">
+          {{{html-title}}}
+        </h1>
+
+        {{#html-subtitle}}
+          <div class="bw-subtitle">{{{html-subtitle}}}</div>
+        {{/html-subtitle}}
+
+        <div id="bodyContent" class="mw-body-content">
+          {{{html-body-content}}}
+          {{{html-categories}}}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bw-footer">
+    {{#data-footer}}
+      {{#data-info}}
+        {{>FooterLine}}
+      {{/data-info}}
+      {{#data-places}}
+        {{>FooterLine}}
+      {{/data-places}}
+      {{#data-icons}}
+        {{>FooterLine}}
+      {{/data-icons}}
+    {{/data-footer}}
+  </footer>
+</div>

@@ -1,0 +1,90 @@
+{
+    "name": "BetaWiki",
+    "version": "1.0.0",
+    "author": [
+        "..."
+    ],
+    "url": "https://www.mediawiki.org/wiki/Skin:BetaWiki",
+    "descriptionmsg": "betawiki-skin-desc",
+    "namemsg": "skinname-betawiki",
+    "license-name": "CC0-1.0",
+    "type": "skin",
+    "requires": {
+        "MediaWiki": ">= 1.41.0"
+    },
+    "ValidSkinNames": {
+        "betawiki": {
+            "class": "SkinMustache",
+            "args": [
+                {
+                    "name": "betawiki",
+                    "supportsMwHeading": true,
+                    "responsive": true,
+                    "messages": [
+                        "betawiki-no-categories",
+                        "sitetitle",
+                        "search",
+                        "otherlanguages",
+                        "tagline",
+                        "navigation-heading"
+                    ],
+                    "styles": [
+                        "mediawiki.ui.icon",
+                        "mediawiki.ui.button",
+                        "skins.betawiki.styles"
+                    ],
+                    "scripts": [
+                        "skins.betawiki"
+                    ]
+                }
+            ]
+        }
+    },
+    "MessagesDirs": {
+        "BetaWiki": [
+            "i18n"
+        ]
+    },
+    "ResourceModules": {
+        "skins.betawiki.styles": {
+            "class": "MediaWiki\\ResourceLoader\\SkinModule",
+            "features": {
+                "normalize": true,
+                "elements": true,
+                "content-tables": true,
+                "content-links": false,
+                "content-media": false,
+                "content-links-external": false,
+                "interface-message-box": true,
+                "interface-category": false,
+                "toc": true
+            },
+            "targets": [
+                "desktop",
+                "mobile"
+            ],
+            "styles": [
+                "resources/skin.less"
+            ]
+        },
+        "skins.betawiki": {
+            "targets": [
+                "desktop",
+                "mobile"
+            ],
+            "packageFiles": [
+                "resources/skin.js"
+            ]
+        }
+    },
+    "ResourceFileModulePaths": {
+        "localBasePath": "",
+        "remoteSkinPath": "BetaWiki"
+    },
+    "ResourceModuleSkinStyles": {
+        "betawiki": {
+            "+ext.echo.styles.badge": "resources/extensions/echo.styles.badge.less"
+        }
+    },
+    "manifest_version": 2
+}
