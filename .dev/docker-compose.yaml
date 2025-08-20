@@ -1,0 +1,16 @@
+name: mediawiki
+
+services:
+  web:
+    image: mediawiki:lts
+    ports:
+      - 8080:80
+    volumes:
+      - ./LocalSettings.php:/var/www/html/LocalSettings.php
+      - db:/var/www/data
+      - images:/var/www/html/images
+      - ./BetaWiki:/var/www/html/skins/BetaWiki
+      - ./SkinJson:/var/www/html/skins/SkinJson
+volumes:
+    db:
+    images:
